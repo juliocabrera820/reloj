@@ -1,0 +1,2 @@
+class EmployeeAttendance < ApplicationRecord
+end
