@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2021_07_04_035504) do
 
   # These are extensions that must be enabled in order to support this database
@@ -36,9 +35,6 @@ ActiveRecord::Schema.define(version: 2021_07_04_035504) do
     t.index ["attendance_id"], name: "index_employee_attendance_on_attendance_id"
   end
 
-  add_foreign_key "employee_attendance", "attendances"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -51,9 +47,11 @@ ActiveRecord::Schema.define(version: 2021_07_04_035504) do
     t.string "position"
     t.string "employee_number"
     t.string "private_number"
-    t.integer "status"
-    t.integer "role"
+    t.integer "status", default: 0
+    t.integer "role", default: 1
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "employee_attendance", "attendances"
 end
