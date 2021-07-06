@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_07_04_035504) do
+ActiveRecord::Schema.define(version: 2021_07_06_160048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,10 +32,9 @@ ActiveRecord::Schema.define(version: 2021_07_04_035504) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "attendance_id", null: false
+    t.bigint "user_id", null: false
     t.index ["attendance_id"], name: "index_employee_attendance_on_attendance_id"
-  end
-
-  add_foreign_key "employee_attendance", "attendances"
+    t.index ["user_id"], name: "index_employee_attendance_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,9 +49,15 @@ ActiveRecord::Schema.define(version: 2021_07_04_035504) do
     t.string "position"
     t.string "employee_number"
     t.string "private_number"
-    t.integer "status"
-    t.integer "role"
+    t.integer "status", default: 0
+    t.integer "role", default: 1
+    t.bigint "company_id", null: false
+    t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "employee_attendance", "attendances"
+  add_foreign_key "employee_attendance", "users"
+  add_foreign_key "users", "companies"
 end
