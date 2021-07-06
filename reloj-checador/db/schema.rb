@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_07_06_160048) do
     t.bigint "user_id", null: false
     t.index ["attendance_id"], name: "index_employee_attendance_on_attendance_id"
     t.index ["user_id"], name: "index_employee_attendance_on_user_id"
+
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,4 +61,5 @@ ActiveRecord::Schema.define(version: 2021_07_06_160048) do
   add_foreign_key "employee_attendance", "attendances"
   add_foreign_key "employee_attendance", "users"
   add_foreign_key "users", "companies"
+
 end
