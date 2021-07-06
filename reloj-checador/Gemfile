@@ -18,6 +18,13 @@ gem 'turbolinks', '~> 5'
 
 gem 'devise'
 
+#bootstrap
+gem 'bootstrap', '~> 4.3.1'
+#jquery3
+gem 'jquery-rails'
+#fontawesome_icons
+gem 'font_awesome5_rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -63,3 +70,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+
+
