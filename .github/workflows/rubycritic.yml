@@ -22,14 +22,15 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker://ruby:2.7-slim
 
-      - name: Install rubycritic
-        run: sudo gem install rubycritic
+#       - name: Install rubycritic
+#         run: sudo gem install rubycritic
 
-      # Runs RubyCritic App
-      - name: RubyCritic App
-        run: mkdir -p tmp/rubycritic && rubycritic --no-browser -p tmp/rubycritic/rubycritic-app -s 90 app config lib
+#       # Runs RubyCritic App
+#       - name: RubyCritic App
+#         run: mkdir -p tmp/rubycritic && rubycritic --no-browser -p tmp/rubycritic/rubycritic-app -s 90 app config lib
 
-      # Runs RubyCritic on Tests
-      - name: RubyCritic on Tests
-        run: mkdir -p tmp/rubycritic && rubycritic --no-browser -p tmp/rubycritic/rubycritic-app -s 65 spec test
+#       # Runs RubyCritic on Tests
+#       - name: RubyCritic on Tests
+#         run: mkdir -p tmp/rubycritic && rubycritic --no-browser -p tmp/rubycritic/rubycritic-app -s 65 spec test
+        
 

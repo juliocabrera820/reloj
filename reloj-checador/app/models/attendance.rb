@@ -1,3 +1,3 @@
 class Attendance < ApplicationRecord
-  belongs_to :employee_attendance
+  has_many :employee_attendance
 end
