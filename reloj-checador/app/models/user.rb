@@ -3,9 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  belongs_to :employee_attendance
-  has_many :companies
+  belongs_to :company
+  has_many :employee_attendance
   enum status: %i[active inactive]
   enum role: %i[employee admin]
-  
 end
