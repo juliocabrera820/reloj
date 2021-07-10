@@ -1,0 +1,32 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Position</th>
+        <th scope="col">Employee Number</th>
+        <th scope="col">Private Number</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @employees.each.with_index(1) do |employee, index| %>
+        <tr>
+          <td><%= index %></td>
+          <td><%= employee.name %></td>
+          <td><%= employee.email %></td>
+          <td><%= employee.position %></td>
+          <td><%= employee.employee_number %></td>
+          <td><%= employee.private_number %></td>
+          <td>
+            <%= link_to '', employee_path(employee), class: 'fas fa-eye btn btn-warning' %>
+            <%= link_to '', edit_employee_path(employee), class: 'fas fa-edit btn btn-info' %>
+            <%= link_to '', employee_path(employee), class: 'fas fa-trash-alt btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
