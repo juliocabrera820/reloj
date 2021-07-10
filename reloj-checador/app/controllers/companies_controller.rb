@@ -4,31 +4,27 @@ class CompaniesController < ApplicationController
         @company = Company.new
     end
 
-    def show
-    end
-
-    def edit
-
-    end
-
-    def new
-    end
+    def show; end
+    def edit; end
+    def new; end
 
     def create
-        parametros = params[:company]
-        @company = Company.new('name' => parametros['name'], 'address'=>  parametros['address'])
-        @company.save
+        company = Company.create(params.require(:company).permit(:name, :address))
+        flash[:notice] = 'Comapany created'
         redirect_to action: "index"
     end
 
     def update
-        puts 'hola desde update'
+        company = Company.find(params[:id])
+        company.update(params.require(:company).permit(:name, :address))
+        flash[:notice] = 'Comapany updated'
+        redirect_to action: "index"
     end
 
     def destroy
-    end
-
-    def company_params 
-        params.require(:company).permit(:name, :address) 
+        company = Company.find(params[:id])
+        company.destroy();
+        flash[:notice] = 'Comapany deleted'
+        redirect_to action: "index"
     end
 end
