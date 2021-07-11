@@ -141,6 +141,7 @@ GEM
     nokogiri (1.11.7-x86-mingw32)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (4.10.1)
     pg (1.2.3)
     pg (1.2.3-x64-mingw32)
     pg (1.2.3-x86-mingw32)
@@ -288,6 +289,7 @@ DEPENDENCIES
   faker
   font_awesome5_rails
   listen (~> 3.3)
+  pagy
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
