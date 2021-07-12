@@ -1,8 +1,10 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: %i[show edit update destroy]
+  before_action :set_companies, only: %i[new edit]
 
   def index
-    @pagy, @employees = pagy(User.all.where(role: 'employee'), items: 8)
+    per_page ||= 8
+    @pagy, @employees = pagy(UsersQuery.new.employee, items: per_page)
   end
 
   def new
@@ -14,9 +16,8 @@ class EmployeesController < ApplicationController
   def create
     @employee = User.new(employee_params)
     @employee.role = 'employee'
-    @employee.company_id = 1
     if @employee.save
-      flash[:success] = 'employee successfully created'
+      flash[:success] = 'employee has been successfully created'
       redirect_to employees_path
     else
       render :new
@@ -25,7 +26,16 @@ class EmployeesController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    @employee = User.new(employee_params)
+    @employee.role = 'employee'
+    if @employee.update
+      flash[:success] = 'employee has been successfully updated'
+      redirect_to employees_path
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @employee.destroy
@@ -36,10 +46,14 @@ class EmployeesController < ApplicationController
   private
 
   def employee_params
-    params.require(:user).permit(:name, :email, :position, :employee_number, :private_number)
+    params.require(:user).permit(:name, :email, :position, :employee_number, :private_number, :company_id)
   end
 
   def set_employee
     @employee = User.where(id: params[:id], role: 'employee').first
+  end
+
+  def set_companies
+    @companies = Company.all
   end
 end
