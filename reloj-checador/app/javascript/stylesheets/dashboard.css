@@ -1,0 +1,35 @@
+.t_attendance{
+    background-color:#cef4e9;
+    color: #256F54;
+}
+
+.t_absence{
+    background-color:#f4eace;
+    color: #93762E;
+}
+
+.t_a_check_in{
+    background-color:#d0eaf1;
+    color: #2B4E87;
+}
+
+.t_a_check_out{
+    background-color:#f1d0ed;
+    color: #8F3846;
+}
+
+.t_attendance_i_color{
+    background-color:#7AB493;
+}
+
+.t_absence_i_color{
+    background-color:#C6B67D;
+}
+
+.t_a_check_in_i_color{
+    background-color:#82A4C0;
+}
+
+.t_a_check_out_i_color{
+    background-color:#C39393;
+}
