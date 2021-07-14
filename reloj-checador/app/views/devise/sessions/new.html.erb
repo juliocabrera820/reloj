@@ -1,24 +1,45 @@
-<h2>Log in</h2>
+<div class="container">
+  <div class="split left">
+	<h2>Welcome to the check clock</h2>
+		<div class="centered-form">
+		
+			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>	
+				<div class="field">
+					
+					<%= f.email_field :email, autofocus: true, autocomplete: "email",class:"in-email"%>
+					<p>Email</p>
+				</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+				<div class="field">
+					
+					<%= f.password_field :password, autocomplete: "current-password", class:"in-password"%>
+					<p>Password</p>
+				</div>
+
+				<% if devise_mapping.rememberable? %>
+					<div class="field">
+						<%= f.check_box :remember_me %>
+						<%= f.label :remember_me %>
+					</div>
+				<% end %>
+
+				<div>
+					<br>
+				
+					<button class="button-log">Log in <% f.submit %></button>
+				</div>
+			<% end %>
+		</div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="split right">
+    <div class="centered">
+      <%# <img src="" alt="Avatar man"> %>
+			<a href="/"> 
+        <%= image_tag 'check-login.jpg'%>
+      </a>
+      <%# <h2>John Doe</h2>
+      <p>Some text here too.</p> %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</div>
