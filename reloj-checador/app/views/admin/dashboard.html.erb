@@ -1,1 +1,120 @@
-<h1> Bienvenido al dashboard </h1>
+<div class="container-fluid">
+    <div class="row dashboard_section">
+        <div class="col-md-3 border-end pt-2 side_menu">
+            <h2 class="text-center"><i class="fas fa-user-tie"></i><h2>
+            <h6 class="text-center"> Nombre de Administrador</h6>
+            <div>
+                <ul class="list-group list-group-flush">           
+                    <li class="list-group-item p-0 m-0 li_menu">
+                        <a href="#" class="text-decoration-none d-block px-3 py-2 active" >
+                           <i class="fas fa-tachometer-alt fa-fw"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="list-group-item p-0 m-0 li_menu">
+                        <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                            <i class="far fa-building fa-fw"></i>
+                            Companies
+                        </a>
+                    </li>
+                    <li class="list-group-item p-0 m-0 li_menu">
+                        <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                            <i class="fas fa-user-astronaut fa-fw"></i>
+                            Employees
+                        </a>
+                    </li>
+                    <li class="list-group-item p-0 m-0 li_menu">
+                        <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                            <i class="far fa-clipboard fa-fw"></i>
+                            Reports
+                        </a>
+                    </li>
+                    <!-- Log out-->
+                    <li class="list-group-item p-0 m-0 li_menu">
+                        <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                            <i class="fas fa-sign-out-alt"></i>
+                            Log out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Aqui va el contenido -->
+        <div class="col-md-9 pb-3">
+            <header>
+                <div class="col-12 d-flex justify-content-between p-2 fs-2">Hi, welcome back 
+                <button data-bs-target="#modal_menu" data-bs-toggle="modal" class="btn btn-secondary menu_buton">
+                    <i class="fs-4 fas fa-bars"></i></div>
+                </button>
+            </header>
+
+            <div class="row">
+                <%@data.each do |d|%>
+                    <div class="text-center col-md-6">
+                        <div class="rounded mt-4 <%= d[:class]%> py-5">
+                            <h1 class="text-light "><i class="rounded-circle p-4 <%= d[:i_color]%> <%= d[:icons]%>"></i></h1>
+                            <h1 class="fw-bolder"><%= d[:number] %></h1>
+                            <h6><%= d[:title] %></h6>
+                        </div>
+                        
+                    </div>
+                <%end%>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade left" id="modal_menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2 class="text-center"><i class="fas fa-user-tie"></i><h2>
+        <h6 class="text-center"> Nombre de Administrador</h6>
+        <div>
+            <ul class="list-group list-group-flush">           
+                <li class="list-group-item p-0 m-0 li_menu">
+                    <a href="#" class="text-decoration-none d-block px-3 py-2 active" >
+                        <i class="fas fa-tachometer-alt fa-fw"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="list-group-item p-0 m-0 li_menu">
+                    <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                        <i class="far fa-building fa-fw"></i>
+                        Companies
+                    </a>
+                </li>
+                <li class="list-group-item p-0 m-0 li_menu">
+                    <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                        <i class="fas fa-user-astronaut fa-fw"></i>
+                        Employees
+                    </a>
+                </li>
+                <li class="list-group-item p-0 m-0 li_menu">
+                    <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                        <i class="far fa-clipboard fa-fw"></i>
+                        Reports
+                    </a>
+                </li>
+                <!-- Log out-->
+                <li class="list-group-item p-0 m-0 li_menu">
+                    <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                        <i class="fas fa-sign-out-alt"></i>
+                        Log out
+                    </a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

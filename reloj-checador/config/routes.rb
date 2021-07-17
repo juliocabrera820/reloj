@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard', to: 'admin#dashboard'
+
+  resources :companies
+
 end
