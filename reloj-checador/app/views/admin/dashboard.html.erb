@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row" style="height:100vh !important;">
+    <div class="row dashboard_section">
         <div class="col-md-3 border-end pt-2 side_menu">
             <h2 class="text-center"><i class="fas fa-user-tie"></i><h2>
             <h6 class="text-center"> Nombre de Administrador</h6>
@@ -52,7 +52,7 @@
             <div class="row">
                 <%@data.each do |d|%>
                     <div class="text-center col-md-6">
-                        <div class="rounded mt-4 <%= d[:class]%>" style="padding-top:30px; padding-bottom:30px;">
+                        <div class="rounded mt-4 <%= d[:class]%> py-5">
                             <h1 class="text-light "><i class="rounded-circle p-4 <%= d[:i_color]%> <%= d[:icons]%>"></i></h1>
                             <h1 class="fw-bolder"><%= d[:number] %></h1>
                             <h6><%= d[:title] %></h6>
