@@ -1,9 +1,9 @@
 class UsersQuery
-  def initialize(users = User.all)
-    @users = users
+  def self.employees
+    User.all.where(role: 'employee')
   end
 
-  def employee
-    @users.where(role: 'employee')
+  def self.employee(id)
+    User.where(id: id, role: 'employee').first
   end
 end
