@@ -4,14 +4,16 @@ class EmployeesController < ApplicationController
 
   def index
     per_page ||= 8
-    @pagy, @employees = pagy(UsersQuery.new.employee, items: per_page)
+    @pagy, @employees = pagy(UsersQuery.employees, items: per_page)
   end
 
   def new
     @employee = User.new
   end
 
-  def show; end
+  def show
+    @employee_presenter = EmployeePresenter.new(@employee)
+  end
 
   def create
     @employee = User.new(employee_params)
@@ -50,7 +52,7 @@ class EmployeesController < ApplicationController
   end
 
   def set_employee
-    @employee = User.where(id: params[:id], role: 'employee').first
+    @employee = UsersQuery.employee(params[:id])
   end
 
   def set_companies
