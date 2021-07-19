@@ -1,7 +1,9 @@
 <div class="container col-md-4 mt-5">
   <div class="row">
     <div class="col">
-      <%= render 'form', button_title: 'Update' %>
+      <%= form_with model: @employee, url: { controller: 'employees', action: 'update' } do |form| %>
+        <%= render 'form_fields', button_title: 'Update' %>
+      <% end %>
     </div>
   </div>
 </div>
