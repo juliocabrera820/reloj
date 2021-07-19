@@ -29,9 +29,7 @@ class EmployeesController < ApplicationController
   def edit; end
 
   def update
-    @employee = User.new(employee_params)
-    @employee.role = 'employee'
-    if @employee.update
+    if @employee.update(employee_params)
       flash[:success] = 'employee has been successfully updated'
       redirect_to employees_path
     else
