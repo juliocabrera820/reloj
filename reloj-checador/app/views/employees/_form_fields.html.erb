@@ -23,5 +23,12 @@
     <%= form.label :empresa %>
     <%= form.select :company_id, convert_to_option(@companies), {}, { class: 'form-select'} %>
   </div>
-  <%= render 'options', form: form, button_title: button_title %>
+  <div class="mt-4">
+    <div class="d-grid">
+      <%= link_to 'Back', employees_path, class: 'btn btn-warning'%>
+    </div>
+    <div class="d-grid mt-2">
+      <%= form.submit "#{button_title}", :class => 'btn btn-success' %>
+    </div>
+  </div>
 <% end %>
