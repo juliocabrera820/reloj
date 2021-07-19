@@ -1,0 +1,28 @@
+.li_menu a{
+    color: black;
+}
+
+.li_menu a.active{
+    background-color: blue;
+    color: white;
+}
+
+.li_menu a:hover{
+    color: white;
+    background-color: blue;
+}
+
+.menu_buton{
+    display: none;
+}
+
+/*screen for md*/
+@media only screen and (max-width: 768px) {
+    .side_menu {
+      display: none;
+    }
+    .menu_buton{
+        display: block;
+    }
+  }
+
