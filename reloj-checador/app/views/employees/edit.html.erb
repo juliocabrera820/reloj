@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <%= form_with model: @employee, url: { controller: 'employees', action: 'update' } do |form| %>
-        <%= render 'form_fields', button_title: 'Update' %>
+        <%= render 'form_fields', form: form, button_title: 'Update' %>
       <% end %>
     </div>
   </div>
