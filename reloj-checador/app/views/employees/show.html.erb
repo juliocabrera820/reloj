@@ -1,0 +1,18 @@
+<div class="container mt-5 col-md-5">
+  <div class="card text-center">
+    <div class="card-header">
+      Name: <%= @employee.name %>
+    </div>
+    <div class="card-body">
+      <span class="badge <%= @employee_presenter.badge_color %>"><%= @employee.status %></span>
+      <h5 class="card-title">Email: <%= @employee.email %></h5>
+      <h5 class="card-title">Position: <%= @employee.position %></h5>
+      <p class="card-text">Employee number: <%= @employee.employee_number %></p>
+      <p class="card-text">Private number: <%= @employee.private_number %></p>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Back', employees_path, class: 'btn btn-warning'%>
+      <%= link_to 'Edit', edit_employee_path(@employee), class: 'btn btn-primary'%>
+    </div>
+  </div>
+</div>

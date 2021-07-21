@@ -1,0 +1,32 @@
+<div class="form-group mb-3">
+  <%= form.label :name %>
+  <%= form.text_field :name, class: 'form-control' %>
+</div>
+<div class="form-group mb-3">
+  <%= form.label :email %>
+  <%= form.text_field :email, class: 'form-control' %>
+</div>
+<div class="form-group mb-3">
+  <%= form.label :position %>
+  <%= form.text_field :position, class: 'form-control' %>
+</div>
+<div class="form-group mb-3">
+  <%= form.label :employee_number %>
+  <%= form.text_field :employee_number, class: 'form-control' %>
+</div>
+<div class="form-group mb-3">
+  <%= form.label :private_number %>
+  <%= form.text_field :private_number, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= form.label :empresa %>
+  <%= form.select :company_id, convert_to_option(@companies), {}, { class: 'form-select'} %>
+</div>
+<div class="mt-4">
+  <div class="d-grid">
+    <%= link_to 'Back', employees_path, class: 'btn btn-warning'%>
+  </div>
+  <div class="d-grid mt-2">
+    <%= form.submit "#{button_title}", :class => 'btn btn-success' %>
+  </div>
+</div>
