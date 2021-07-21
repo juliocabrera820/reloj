@@ -1,88 +1,86 @@
-<div class="col-md-3 border-end pt-2 side_menu">
-  <h2 class="text-center"><i class="fas fa-user-tie"></i><h2>
-    <h6 class="text-center"><%= current_user.name %></h6>
-  <div>
-    <ul class="list-group list-group-flush">           
-      <li class="list-group-item p-0 m-0 li_menu">
-        <%= link_to dashboard_path, class: "text-decoration-none d-block px-3 py-2 #{current_path? dashboard_path}" do %>
-          <i class="fas fa-tachometer-alt fa-fw"></i>Dashboard
-        <% end %>
-      </li>
-      <li class="list-group-item p-0 m-0 li_menu">
-        <%= link_to companies_path, class: "text-decoration-none d-block px-3 py-2 #{current_path? companies_path}" do %>
-          <i class="far fa-building fa-fw"></i>Companies
-        <% end %>
-      </li>
-      <li class="list-group-item p-0 m-0 li_menu">
-        <%= link_to companies_path, class: "text-decoration-none d-block px-3 py-2 #{current_path? companies_path}" do %>
-          <i class="fas fa-user-astronaut fa-fw"></i>Employees
-        <% end %>
-      </li>
-      <li class="list-group-item p-0 m-0 li_menu">
-        <%= link_to companies_path, class: "text-decoration-none d-block px-3 py-2 #{current_path? companies_path}" do %>
-          <i class="far fa-clipboard fa-fw"></i>Reports
-        <% end %>
-      </li>
-      <!-- Log out-->
-      <li class="list-group-item p-0 m-0 li_menu">
-        <%= link_to destroy_user_session_path, method: :delete, class: 'text-decoration-none d-block px-3 py-2' do %>
-          <i class="fas fa-sign-out-alt"></i>Sign out
-        <% end %>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade left" id="modal_menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Menu</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h2 class="text-center"><i class="fas fa-user-tie"></i><h2>
-        <h6 class="text-center"> Nombre de Administrador</h6>
+<% if user_signed_in? %>
+  <div class="col-md-2 border-end pt-2 side_menu">
+    <h2 class="text-center"><i class="fas fa-user-tie"></i><h2>
+        <h6 class="text-center"><%= current_user.name %></h6>
         <div>
           <ul class="list-group list-group-flush">           
             <li class="list-group-item p-0 m-0 li_menu">
-              <a href="#" class="text-decoration-none d-block px-3 py-2 active" >
-                <i class="fas fa-tachometer-alt fa-fw"></i>
-                Dashboard
+              <%= link_to dashboard_path, class: "text-decoration-none d-block px-3 py-2 #{current_path? dashboard_path}" do %>
+                <i class="fas fa-tachometer-alt fa-fw"></i>Dashboard
+              <% end %>
+            </li>
+            <li class="list-group-item p-0 m-0 li_menu">
+              <%= link_to companies_path, class: "text-decoration-none d-block px-3 py-2 #{current_path? companies_path}" do %>
+                <i class="far fa-building fa-fw"></i>Companies
+              <% end %>
+            </li>
+            <li class="list-group-item p-0 m-0 li_menu">
+              <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                <i class="fas fa-user-astronaut fa-fw"></i>Employees
               </a>
             </li>
             <li class="list-group-item p-0 m-0 li_menu">
               <a href="#" class="text-decoration-none d-block px-3 py-2" >
-                <i class="far fa-building fa-fw"></i>
-                Companies
-              </a>
-            </li>
-            <li class="list-group-item p-0 m-0 li_menu">
-              <a href="#" class="text-decoration-none d-block px-3 py-2" >
-                <i class="fas fa-user-astronaut fa-fw"></i>
-                Employees
-              </a>
-            </li>
-            <li class="list-group-item p-0 m-0 li_menu">
-              <a href="#" class="text-decoration-none d-block px-3 py-2" >
-                <i class="far fa-clipboard fa-fw"></i>
-                Reports
+                <i class="fas fa-clipboard fa-fw"></i>Reports
               </a>
             </li>
             <!-- Log out-->
             <li class="list-group-item p-0 m-0 li_menu">
-              <a href="#" class="text-decoration-none d-block px-3 py-2" >
-                <i class="fas fa-sign-out-alt"></i>
-                Log out
-              </a>
+              <%= link_to destroy_user_session_path, method: :delete, class: 'text-decoration-none d-block px-3 py-2' do %>
+                <i class="fas fa-sign-out-alt"></i>Sign out
+              <% end %>
             </li>
           </ul>
+        </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade left" id="modal_menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2 class="text-center"><i class="fas fa-user-tie"></i><h2>
+              <h6 class="text-center"> Nombre de Administrador</h6>
+              <div>
+                <ul class="list-group list-group-flush">           
+                  <li class="list-group-item p-0 m-0 li_menu">
+                    <li class="list-group-item p-0 m-0 li_menu">
+                      <%= link_to dashboard_path, class: "text-decoration-none d-block px-3 py-2 #{current_path? dashboard_path}" do %>
+                        <i class="fas fa-tachometer-alt fa-fw"></i>Dashboard
+                      <% end %>
+                    </li>
+                  </li>
+                  <li class="list-group-item p-0 m-0 li_menu">
+                    <%= link_to companies_path, class: "text-decoration-none d-block px-3 py-2 #{current_path? companies_path}" do %>
+                      <i class="far fa-building fa-fw"></i>Companies
+                    <% end %>
+                  </li>
+                  <li class="list-group-item p-0 m-0 li_menu">
+                    <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                      <i class="fas fa-user-astronaut fa-fw"></i>
+                      Employees
+                    </a>
+                  </li>
+                  <li class="list-group-item p-0 m-0 li_menu">
+                    <a href="#" class="text-decoration-none d-block px-3 py-2" >
+                      <i class="far fa-clipboard fa-fw"></i>
+                      Reports
+                    </a>
+                  </li>
+                  <!-- Log out-->
+                  <li class="list-group-item p-0 m-0 li_menu">
+                    <%= link_to destroy_user_session_path, method: :delete, class: 'text-decoration-none d-block px-3 py-2' do %>
+                      <i class="fas fa-sign-out-alt"></i>Sign out
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
+<% end %>
