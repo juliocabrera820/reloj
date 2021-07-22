@@ -1,3 +1,5 @@
 class Attendance < ApplicationRecord
-  has_many :employee_attendance
+  belongs_to :user
+  
+  enum type: %i[check_in check_out]
 end
