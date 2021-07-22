@@ -24,9 +24,9 @@
                             <td><%=company.name%></td>
                             <td><%=company.address%></td>
                             <td>
-                                <%# <button title="View company" class="btn btn-warning"><i class="fas fa-eye"></i></button> %>
+                                <button data-bs-toggle="modal" data-bs-target="#modal_a_e" onclick="show('<%=company.name%>',' <%=company.address%>')" title="Show company" class="btn btn-warning"><i class="fas fa-eye"></i></button>
                                 <button data-bs-toggle="modal" data-bs-target="#modal_a_e" onclick="edit('<%=company.id%>','<%=company.name%>',' <%=company.address%>')" title="Edit company" class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                                <button title="Delete company" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <%= link_to '', company_path(company), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger fas fa-trash-alt', title:'Delete company' %>
                             </td>
                         </tr>
                          <% i +=1; %>
@@ -40,33 +40,41 @@
 <%= render 'modal_a_e', company: @company %>
 
 <script>
+    let name_modal = document.getElementById('name_modal');
+    let form_modal = document.getElementById("form_modal");
+    let name_edit = document.getElementById('company_name');
+    let address_edit = document.getElementById('company_address');
+    let type_method = document.getElementById('method_put');
+    let method = '<input type="hidden" name="_method" value="put" />';
+    let button = document.getElementById('buton_action_modal');
+
     function add()
     {
-        let name_modal = document.getElementById('name_modal');
         name_modal.innerHTML= 'Add Company';
-        let form_modal = document.getElementById("form_modal");
         form_modal.action = '/companies'
-         form_modal.method = 'POST';
-
-        let name_edit = document.getElementById('company_name');
-        let address_edit = document.getElementById('company_address');
-
         name_edit.value = "";
         address_edit.value = "";
+        type_method.innerHTML ="";
+        button.classList.remove('d-none');
     }
 
     function edit(id,name,address)
     {
-        let name_modal = document.getElementById('name_modal');
         name_modal.innerHTML= 'Edit Company';
-        let form_modal = document.getElementById("form_modal");
         form_modal.action = '/companies/'+id;
-        form_modal.method = 'PUT';
-
-        let name_edit = document.getElementById('company_name');
-        let address_edit = document.getElementById('company_address');
-
         name_edit.value = name;
         address_edit.value = address;
+        type_method.innerHTML =method;
+        button.classList.remove('d-none');
+    }
+
+    function show(name,address)
+    {
+        name_modal.innerHTML= 'Show Company';
+        form_modal.action = ''
+        name_edit.value = name;
+        address_edit.value = address;
+        type_method.innerHTML ='';
+        button.classList.add('d-none');
     }
 </script>
