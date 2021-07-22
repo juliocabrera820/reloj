@@ -1,80 +1,78 @@
-<div class="container">
-    <div class="card">
-        <div class="card-header">
-            <div></div>
-            <div class="float-end">
-                <button onclick="add()" data-bs-toggle="modal" data-bs-target="#modal_a_e" class="btn btn-success" title="Add company"><i class="fas fa-plus-circle"></i></button>
-            </div>
-        </div>
-        <div class="card-body">
-            <table class="table table-hover">
-                <thead>
-                    </tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Actions</th>
-                    <tr>
-                </thead>
-                <tbody>
-                    <% i=1; %>
-                    <%-@companies.each do |company|%>
-                        <tr>
-                            <td><%= i %></td>
-                            <td><%=company.name%></td>
-                            <td><%=company.address%></td>
-                            <td>
-                                <button data-bs-toggle="modal" data-bs-target="#modal_a_e" onclick="show('<%=company.name%>',' <%=company.address%>')" title="Show company" class="btn btn-warning"><i class="fas fa-eye"></i></button>
-                                <button data-bs-toggle="modal" data-bs-target="#modal_a_e" onclick="edit('<%=company.id%>','<%=company.name%>',' <%=company.address%>')" title="Edit company" class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                                <%= link_to '', company_path(company), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger fas fa-trash-alt', title:'Delete company' %>
-                            </td>
-                        </tr>
-                         <% i +=1; %>
-                    <%end%>
-                </tbody>
-            </table>
-        </div>
+<div class="container col-md-10 mt-5">
+  <div class="card">
+    <div class="card-header">
+      <div></div>
+      <div class="float-start">
+        <button onclick="add()" data-bs-toggle="modal" data-bs-target="#modal_a_e" class="btn btn-success" title="Add company"><i class="fas fa-plus-circle"></i></button>
+      </div>
     </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          </tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Actions</th>
+          <tr>
+        </thead>
+        <tbody>
+          <% @companies.each.with_index(1) do |company, index| %>
+            <tr>
+              <td><%= index %></td>
+              <td><%= company.name %></td>
+              <td><%= company.address %></td>
+              <td>
+                <button data-bs-toggle="modal" data-bs-target="#modal_a_e" onclick="show('<%=company.name%>',' <%=company.address%>')" title="Show company" class="btn btn-warning"><i class="fas fa-eye"></i></button>
+                <button data-bs-toggle="modal" data-bs-target="#modal_a_e" onclick="edit('<%=company.id%>','<%=company.name%>',' <%=company.address%>')" title="Edit company" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <%= link_to '', company_path(company), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger fas fa-trash-alt', title:'Delete company' %>
+              </td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-center align-items-center mt-5">
+        <%= pagy_bootstrap_nav(@pagy).html_safe %>
+      </div>
+    </div>
+  </div>
 </div>
 
 <%= render 'modal_a_e', company: @company %>
 
 <script>
-    let name_modal = document.getElementById('name_modal');
-    let form_modal = document.getElementById("form_modal");
-    let name_edit = document.getElementById('company_name');
-    let address_edit = document.getElementById('company_address');
-    let type_method = document.getElementById('method_put');
-    let method = '<input type="hidden" name="_method" value="put" />';
-    let button = document.getElementById('buton_action_modal');
+  let name_modal = document.getElementById('name_modal');
+  let form_modal = document.getElementById("form_modal");
+  let name_edit = document.getElementById('company_name');
+  let address_edit = document.getElementById('company_address');
+  let type_method = document.getElementById('method_put');
+  let method = '<input type="hidden" name="_method" value="put" />';
+  let button = document.getElementById('buton_action_modal');
 
-    function add()
-    {
-        name_modal.innerHTML= 'Add Company';
-        form_modal.action = '/companies'
-        name_edit.value = "";
-        address_edit.value = "";
-        type_method.innerHTML ="";
-        button.classList.remove('d-none');
-    }
+  function add(){
+    name_modal.innerHTML= 'Add Company';
+    form_modal.action = '/companies'
+    name_edit.value = "";
+    address_edit.value = "";
+    type_method.innerHTML ="";
+    button.classList.remove('d-none');
+  }
 
-    function edit(id,name,address)
-    {
-        name_modal.innerHTML= 'Edit Company';
-        form_modal.action = '/companies/'+id;
-        name_edit.value = name;
-        address_edit.value = address;
-        type_method.innerHTML =method;
-        button.classList.remove('d-none');
-    }
+  function edit(id,name,address){
+    name_modal.innerHTML= 'Edit Company';
+    form_modal.action = '/companies/'+id;
+    name_edit.value = name;
+    address_edit.value = address;
+    type_method.innerHTML =method;
+    button.classList.remove('d-none');
+  }
 
-    function show(name,address)
-    {
-        name_modal.innerHTML= 'Show Company';
-        form_modal.action = ''
-        name_edit.value = name;
-        address_edit.value = address;
-        type_method.innerHTML ='';
-        button.classList.add('d-none');
-    }
+  function show(name,address){
+    name_modal.innerHTML= 'Show Company';
+    form_modal.action = ''
+    name_edit.value = name;
+    address_edit.value = address;
+    type_method.innerHTML ='';
+    button.classList.add('d-none');
+  }
 </script>
