@@ -6,12 +6,12 @@
     </button>
   </header>
   <div class="row">
-    <%@data.each do |d|%>
+    <% @statistics.each do |statistic| %>
       <div class="text-center col-md-6">
-        <div class="rounded mt-4 <%= d[:class]%> py-5">
-          <h1 class="text-light"><i class="rounded-circle p-4 <%= d[:i_color]%> <%= d[:icons]%>"></i></h1>
-          <h1 class="fw-bolder"><%= d[:number] %></h1>
-          <h6><%= d[:title] %></h6>
+        <div class="rounded mt-4 <%= statistic[:class] %> py-5">
+          <h1 class="text-light"><i class="rounded-circle p-4 <%= statistic[:i_color] %> <%= statistic[:icons] %>"></i></h1>
+          <h1 class="fw-bolder"><%= statistic[:number] %></h1>
+          <h6><%= statistic[:title] %></h6>
         </div>
       </div>
     <%end%>

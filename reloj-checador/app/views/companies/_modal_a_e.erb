@@ -12,17 +12,17 @@
                 <!-- Aqui va el method -->
             </div>
             <div class="form-group mt-2">
-                <%= form.label :name, class:'fw-bold' %> :
-                <%= form.text_field :name, class:'mt-2 form-control', autocomplete:'off' %>
+              <%= form.label :name, class:'fw-bold' %> :
+              <%= form.text_field :name, class:'mt-2 form-control', autocomplete:'off' %>
             </div>
             <div class="form-group mt-2">
-                <%= form.label :address, class:'fw-bold' %> :
-                <%= form.text_field :address, class:'mt-2 form-control', autocomplete:'off' %>
+              <%= form.label :address, class:'fw-bold' %> :
+              <%= form.text_field :address, class:'mt-2 form-control', autocomplete:'off' %>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <%= form.submit 'Save', :class => 'btn', :id=>'buton_action_modal' %>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <%= form.submit 'Save', :class => 'btn', :id=>'buton_action_modal' %>
         </div>
       <% end %>
     </div>
