@@ -1,0 +1,26 @@
+.title-reports{
+  padding-top: 50px;
+  text-align: center;
+  color: #FF8474;
+  font-weight: bolder;  
+}
+.text-layout{
+  padding-top: 70px;
+}
+.card {
+  height: 200px;
+  margin: 40px 60px; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 20px;
+  transition: 0.3s;
+  background-color: #9F5F80;
+  color: white;
+  text-align: center;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.pointer {
+  cursor: pointer;
+}
