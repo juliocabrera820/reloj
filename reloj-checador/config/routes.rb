@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       root 'attendances#check', as: :unauthenticated_admin
     end
   end
-
+  
+  get 'reports', to: 'reports#index'
   get 'dashboard', to: 'admin#dashboard'
   post 'attendances/employee_check', to: 'attendances#employee_check', as: 'employee_check'
 
