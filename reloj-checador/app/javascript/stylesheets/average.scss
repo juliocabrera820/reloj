@@ -1,0 +1,70 @@
+
+  .average-layout{
+	margin-top: 50px;
+    color: #583D72;
+    font-weight: bolder;
+    font-size: 18px;
+  }
+
+  .average-save{
+    width: 160px;
+    background-color: #583D72;
+    color: white;
+    padding: 10px 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+  }
+  .average-space-button{
+    margin-right: 450px;
+    margin-top: 40px;
+  }
+  .average-title-check{
+    color: #FFC996;
+    font-weight: bolder;
+  }
+  .average-title-attendances{
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: #FF8474;
+    font-weight: bolder;
+  }
+
+  .average-dropbtn {
+    background-color: #9F5F80;
+    color: white;
+    padding: 10px 40px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .average-dropdown {
+    display: inline-block;
+    margin-top: 40px;
+    margin-right: 100px;
+    text-align: right;
+  }
+
+  .average-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .average-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .average-dropdown-content a:hover {background-color: #ddd;}
+  
+  .average-dropdown:hover .average-dropdown-content {display: block;}
+  
+  .average-dropdown:hover .average-dropbtn {background-color: #583D72;}
+  
