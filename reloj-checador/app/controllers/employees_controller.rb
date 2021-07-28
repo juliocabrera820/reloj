@@ -1,6 +1,7 @@
 class EmployeesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_employee, only: %i[show edit update destroy]
-  before_action :set_companies, only: %i[new edit]
+  before_action :set_companies, only: %i[new edit create update]
 
   def index
     per_page ||= 8
@@ -18,12 +19,10 @@ class EmployeesController < ApplicationController
   def create
     @employee = User.new(employee_params)
     @employee.role = 'employee'
-    @employee.password = 'xxxxxxxx'
     if @employee.save
       flash[:success] = 'employee has been successfully created'
       redirect_to employees_path
     else
-      flash[:danger] = 'employee was not created'
       render :new
     end
   end
@@ -35,7 +34,6 @@ class EmployeesController < ApplicationController
       flash[:success] = 'employee has been successfully updated'
       redirect_to employees_path
     else
-      flash[:danger] = 'employee was not updated'
       render :edit
     end
   end
