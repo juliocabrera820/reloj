@@ -1,0 +1,32 @@
+<h1 class="title-reports">Reports</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card pointer">
+          <div class="container">
+            <h4 class="text-layout"> <%= link_to "Daily attendance", reports_daily_attendance_path, class: "link-layout" %></h4> 
+          </div>
+        </div>
+				<div class="card pointer">
+					<div class="container">
+						<h4 class="text-layout"><%= link_to "Average time in/out per month", reports_average_time_path, class: "link-layout" %></h4>	
+					</div>
+				</div> 
+      </div>
+      <div class="col-sm">
+				<div class="card pointer">
+					<div class="container">
+						<h4 class="text-layout"><%= link_to "Monthly attendance", reports_monthly_attendance_path, class: "link-layout" %></h4>
+					</div>
+				</div>
+      </div>
+      <div class="col-sm">
+				<div class="card pointer">
+          <div class="container">
+            <h4 class="text-layout"><%= link_to "Monthly absence", reports_monthly_absence_path, class: "link-layout" %></h4>
+          </div>
+        </div> 
+      </div>
+    </div>
+	</div>
+</div>
