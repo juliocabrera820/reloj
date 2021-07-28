@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
   resources :companies
   resources :employees
+  resources :reports
 end

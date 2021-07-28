@@ -1,15 +1,22 @@
-<div class="container col-md-10 mt-5">
-  <div class="d-flex justify-content-center align-items-center">
+<nav class="nav_log fw-bold"><a> Login &nbsp; <i class="fas fa-user"></i></a></nav>
+<div class="d-flex vw-100 vh-100 justify-content-center  align-items-center flex-column">
+  <h1 class="fw-bold fst-italic">Check Clock</h1>
+  <div class="mb-5 text-center caja_int">
     <%= form_with model: @attendance, url: employee_check_path do |form| %>
-      <h2>Check Clock</h2>
+      <h2 class="fw-bold">Date:</h2>
+      <h3 id="date"></h2>
+      <h2 class="fw-bold">Time:</h2>
+      <h3 id="MyClockDisplay" class="clock" onload="showTime()"></h3>
       <div class="form-group">
         <%= form.label :private_number %>
         <%= form.text_field :private_number, class: 'form-control'%>      
       </div>
-      <div class="mt-3">
-        <%= form.submit 'Check in', class: 'btn btn-success' %>
-        <%= form.submit 'Check out', class: 'btn btn-info' %>
+      <div class="mt-3 d-flex justify-content-center botones">
+        <%= form.submit 'Check in', class: 'btn bg_primary_check' %>
+        <%= form.submit 'Check out', class: 'btn bg_secondary_check' %>
       </div>
     <% end %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'check' %>
