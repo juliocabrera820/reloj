@@ -1,6 +1,7 @@
 class EmployeesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_employee, only: %i[show edit update destroy]
-  before_action :set_companies, only: %i[new edit]
+  before_action :set_companies, only: %i[new edit create update]
 
   def index
     per_page ||= 8
