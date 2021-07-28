@@ -12,4 +12,12 @@ module ApplicationHelper
   def error_message(form, field)
     form.errors.full_messages_for(field).first
   end
+
+  def status(current_status)
+    current_status == 'active' ? 'bg-success' : 'bg-danger'
+  end
+
+  def button_status(current_status)
+    current_status == 'active' ? 'fas fa-bell-slash' : 'fas fa-bell'
+  end
 end
