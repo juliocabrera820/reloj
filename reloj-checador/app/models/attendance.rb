@@ -3,4 +3,6 @@ class Attendance < ApplicationRecord
 
   enum type: %i[check_in check_out]
   self.inheritance_column = :_sti_disabled
+
+  validates_presence_of :user_id
 end
