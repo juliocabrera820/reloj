@@ -3,26 +3,26 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="name_modal">Add Company</h5>
+        <h5 class="modal-title label-form" id="name_modal">Add Company</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <%= form_with(model: @company, local: true ,:html => {:id => "form_modal"}) do |form| %>
         <div class="modal-body">
             <div id="method_put" class="form-group mt-2">
-                <!-- Aqui va el method -->
+            <!-- Aqui va el method -->
             </div>
             <div class="form-group mt-2">
-              <%= form.label :name, class:'fw-bold' %> :
-              <%= form.text_field :name, class:'mt-2 form-control', autocomplete:'off' %>
+              <%= form.label :name, class:'label-form' %> :
+              <%= form.text_field :name, class:'mt-2 in-company', autocomplete:'off' %>
             </div>
-            <div class="form-group mt-2">
-              <%= form.label :address, class:'fw-bold' %> :
-              <%= form.text_field :address, class:'mt-2 form-control', autocomplete:'off' %>
+            <div class="form-group mt-2 mb-2">
+              <%= form.label :address, class:'label-form' %> :
+              <%= form.text_field :address, class:'mt-2 in-company', autocomplete:'off' %>
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <%= form.submit 'Save', :class => 'btn', :id=>'buton_action_modal' %>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <%= form.submit 'Save', :class => 'btn form-btn', :id=>'buton_action_modal' %>
         </div>
       <% end %>
     </div>
