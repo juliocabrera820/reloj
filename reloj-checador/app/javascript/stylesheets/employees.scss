@@ -1,0 +1,48 @@
+  .in-form {
+    height:17px;
+    border: 0;
+    width: 430px;
+    margin-right: 5px;
+    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+  }
+  .in-form:focus {
+    outline: none;
+    box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
+  }
+  .title-forms {
+    color: #583D72;
+    font-weight: bolder;
+  }
+  .margin-label {
+    margin-left: 12px;
+  }
+  .label-form {
+    color: #583D72;
+    font-weight: bolder;
+  }
+  .form-btn {
+    background-color: #583D72;
+    color: white;
+  }
+  .show-btn{
+    background-color: #FF8474;
+    color: white;
+  }
+
+  @media screen and (max-width: 700px) {
+    .in-form {
+      height:17px;
+      border: 0;
+      width: 330px;
+      box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+      -webkit-transition: box-shadow 0.3s;
+      transition: box-shadow 0.3s;
+    }
+
+    .in-form:focus {
+      outline: none;
+      box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
+    }
+  }
