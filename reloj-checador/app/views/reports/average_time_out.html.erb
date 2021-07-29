@@ -1,10 +1,10 @@
 <div class="container col-md-10 mt-5">
-  <h1 class="average-title-attendances">Monthly absence</h1>
+  <h1 class="average-title-attendances">Average time check-out by month</h1>
   <div class="container">
     <h5 class="average-title-check">Months</h5>
     <div class="d-flex flex-column">
       <% convert_to_month_option.each do |month| %>
-        <%= link_to "#{month[:name]}", monthly_absence_pdf_path(month[:id], format: :pdf), class: 'average-save mt-3', target: '_blank'%>
+        <%= link_to "#{month[:name]}", average_time_out_pdf_path(month[:id],format: :pdf), class: 'average-save mt-3', format: :pdf, target: '_blank'%>
       <% end %>
     </div>
   </div>
