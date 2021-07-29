@@ -28,7 +28,7 @@
           <td><%= employee.private_number %></td>
           <td>
             <span class="badge <%= status(employee.status) %>"><%= employee.status %></span>
-            <%= link_to '', update_status_path(employee), class: "btn btn-info #{button_status(employee.status)}" %>
+            <%= link_to '', update_status_path(employee), class: "btn btn-secondary #{button_status(employee.status)}" %>
           </td>
           <td>
             <%= link_to '', employee_path(employee), class: 'fas fa-eye btn show-btn' %>
