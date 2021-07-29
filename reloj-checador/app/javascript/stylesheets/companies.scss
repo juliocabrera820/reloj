@@ -1,0 +1,29 @@
+  .in-company {
+    height:17px;
+    border: 0;
+    width: 430px;
+    margin-right: 5px;
+    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+  }
+  .in-company:focus {
+    outline: none;
+    box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
+  }
+
+  @media screen and (max-width: 700px) {
+    .in-company {
+      height:17px;
+      border: 0;
+      width: 280px;
+      box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+      -webkit-transition: box-shadow 0.3s;
+      transition: box-shadow 0.3s;
+    }
+
+    .in-company:focus {
+      outline: none;
+      box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
+    }
+  }
