@@ -1,0 +1,28 @@
+<%= wicked_pdf_stylesheet_link_tag('reports') %>
+<%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
+
+<h1 class="title-report"><%= @company %> absences</h1>
+<table class="table text-center mt-5">
+  <thead>
+    <tr>
+      <th scope="col">Employee name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Private number</th>
+      <th scope="col">Employee number</th>
+      <th scope="col">Absence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <% user.absences.each do |absence| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.private_number %></td>
+          <td><%= user.employee_number %></td>
+          <td><%= absence.created_at %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
