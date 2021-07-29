@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       root 'attendances#check', as: :unauthenticated_admin
     end
   end
-  
+
   get 'reports', to: 'reports#index'
   get 'reports/daily_attendance', to: 'reports#daily_attendance'
   get 'reports/monthly_attendance', to: 'reports#monthly_attendance'
@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   resources :companies
   resources :employees
+  get 'employees/status/:id', to: 'employees#update_status', as: 'update_status'
+  resources :reports
 end

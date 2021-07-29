@@ -13,6 +13,7 @@
         <th scope="col" class="label-form">Position</th>
         <th scope="col" class="label-form">Employee Number</th>
         <th scope="col" class="label-form">Private Number</th>
+        <th scope="col" class="label-form">Status</th>
         <th scope="col" class="label-form">Actions</th>
       </tr>
     </thead>
@@ -25,6 +26,10 @@
           <td><%= employee.position %></td>
           <td><%= employee.employee_number %></td>
           <td><%= employee.private_number %></td>
+          <td>
+            <span class="badge <%= status(employee.status) %>"><%= employee.status %></span>
+            <%= link_to '', update_status_path(employee), class: "btn btn-info #{button_status(employee.status)}" %>
+          </td>
           <td>
             <%= link_to '', employee_path(employee), class: 'fas fa-eye btn show-btn' %>
             <%= link_to '', edit_employee_path(employee), class: 'fas fa-edit btn form-btn' %>
