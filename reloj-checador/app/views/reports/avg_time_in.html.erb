@@ -1,1 +1,7 @@
-<h1>Test</h1>
+<%= wicked_pdf_stylesheet_link_tag('reports') %>
+<%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
+
+<h1 class="title-report">Avg time employees</h1>
+<h3 class="title-month mt-5">Report of <%= @month.capitalize %></h3>
+<h4 class="mt-4">The average time employees checked in for this month has been <%= @avg_time %></h4>
+</table>

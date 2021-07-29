@@ -35,6 +35,7 @@ class ReportsController < ApplicationController
 
   def average_time_in_pdf
     @month = month_name(params[:id])
+    @avg_time = AttendancesQuery.average_time_employee_check_in_by_month(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
@@ -47,6 +48,7 @@ class ReportsController < ApplicationController
 
   def average_time_out_pdf
     @month = month_name(params[:id])
+    @avg_time = AttendancesQuery.average_time_employee_check_out_by_month(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
