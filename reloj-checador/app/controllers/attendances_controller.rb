@@ -1,4 +1,6 @@
 class AttendancesController < ApplicationController
+  include AttendanceHelper
+
   def check
     @attendance = Attendance.new
   end
@@ -12,7 +14,17 @@ class AttendancesController < ApplicationController
   end
 
   def check_in
-    @attendance = initialize_attendance
+    @employee = UsersQuery.active_employee(params[:attendance][:private_number])
+    unless @employee
+      flash[:danger] = 'You are an inactive employee'
+      return redirect_to unauthenticated_admin_path
+    end
+    unless validate_check_in_time
+      flash[:danger] = 'You have absence'
+      Absence.create(user_id: @employee.id)
+      return redirect_to unauthenticated_admin_path
+    end
+    @attendance = initialize_attendance(@employee)
     @attendance.type = 'check_in'
     if @attendance.save
       flash[:success] = 'You have checked in successfully'
@@ -23,9 +35,13 @@ class AttendancesController < ApplicationController
   end
 
   def check_out
-    @attendance = initialize_attendance
+    @employee = UsersQuery.active_employee(params[:attendance][:private_number])
+    unless @employee
+      flash[:danger] = 'You are an inactive employee'
+      return redirect_to unauthenticated_admin_path
+    end
+    @attendance = initialize_attendance(@employee)
     @attendance.type = 'check_out'
-
     if @attendance.save
       flash[:success] = 'You have checked out successfully'
     else
@@ -40,14 +56,9 @@ class AttendancesController < ApplicationController
     params.require(:attendance).permit(:private_number)
   end
 
-  def employee(private_number)
-    User.find_by(private_number: private_number)
-  end
-
-  def initialize_attendance
-    @employee = employee(params[:attendance][:private_number])
+  def initialize_attendance(employee)
     @attendance = Attendance.new
-    @attendance.user_id = @employee.id
+    @attendance.user_id = employee.id
     @attendance
   end
 end
