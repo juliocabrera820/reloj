@@ -1,46 +1,11 @@
-<h1 class="title-attendances">Daily attendances</h1>
+<div class="container col-md-10 mt-5">
+  <h1 class="title-attendances">Daily attendances</h1>
   <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <p class="layout">Weekday</p> 
-      </div>   
-      <div class="col-sm">
-        <div class="dropdown">
-          <button class="dropbtn">Dropdown</button>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
-      </div>      
-    </div>
-    <div class="row pb-5">
-      <div class="col-sm mt-5">
-        <p class="layout">Company</p>
-      </div> 
-      <div class="col-sm mt-5">
-        <div class="dropdown">
-          <button class="dropbtn">Dropdown</button>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
-      </div>            
-    </div>
-    <div class="row mt-5">
-      <div class="col-sm">
-        <div class="space-right">
-          <button class="save">Open</button>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="space-button">
-          <button class="save">Download</button>
-        </div>
-      </div>
+    <h5 class="average-title-check">Companies</h5>
+    <div class="d-flex flex-column">
+      <% convert_to_option(@companies).each do |company| %>
+        <%= link_to "#{company.first}", daily_attendance_pdf_path(company.second, company.first, format: :pdf), class: 'average-save mt-3', target: '_blank'%>
+      <% end %>
     </div>
   </div>
- 
+</div> 
