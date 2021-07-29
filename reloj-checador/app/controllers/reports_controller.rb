@@ -22,6 +22,7 @@ class ReportsController < ApplicationController
 
   def monthly_absence_pdf
     @month = month_name(params[:id])
+    @users = AbsencesQuery.employee_absences_by_month(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
