@@ -1,20 +1,20 @@
 <div class="container col-md-10 mt-5">
-  <div class="float-start">
+  <div class="float-start pb-5">
     <%= link_to new_employee_path, class: 'btn btn-success' do %>
-      <i class="fas fa-plus-circle"></i>
+      <i class="fas fa-plus-circle"> Add new employee </i> 
     <% end %>
   </div>
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Position</th>
-        <th scope="col">Employee Number</th>
-        <th scope="col">Private Number</th>
-        <th scope="col">Status</th>
-        <th scope="col">Actions</th>
+        <th scope="col" class="label-form">#</th>
+        <th scope="col" class="label-form">Name</th>
+        <th scope="col" class="label-form">Email</th>
+        <th scope="col" class="label-form">Position</th>
+        <th scope="col" class="label-form">Employee Number</th>
+        <th scope="col" class="label-form">Private Number</th>
+        <th scope="col" class="label-form">Status</th>
+        <th scope="col" class="label-form">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -31,8 +31,8 @@
             <%= link_to '', update_status_path(employee), class: "btn btn-info #{button_status(employee.status)}" %>
           </td>
           <td>
-            <%= link_to '', employee_path(employee), class: 'fas fa-eye btn btn-warning' %>
-            <%= link_to '', edit_employee_path(employee), class: 'fas fa-edit btn btn-info' %>
+            <%= link_to '', employee_path(employee), class: 'fas fa-eye btn show-btn' %>
+            <%= link_to '', edit_employee_path(employee), class: 'fas fa-edit btn form-btn' %>
             <%= link_to '', employee_path(employee), class: 'fas fa-trash-alt btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
@@ -43,4 +43,3 @@
     <%= pagy_bootstrap_nav(@pagy).html_safe %>
   </div>
 </div>
-
