@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_employee, only: %i[show edit update destroy]
+  before_action :set_employee, only: %i[show edit update destroy update_status]
   before_action :set_companies, only: %i[new edit create update]
 
   def index
@@ -41,6 +41,12 @@ class EmployeesController < ApplicationController
   def destroy
     @employee.destroy
     flash[:danger] = 'employee has been successfully destroyed'
+    redirect_to employees_path
+  end
+
+  def update_status
+    @current_status = @employee.status == 'active' ? 'inactive' : 'active'
+    @employee.update(status: @current_status)
     redirect_to employees_path
   end
 

@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 
   resources :companies
   resources :employees
+  get 'employees/status/:id', to: 'employees#update_status', as: 'update_status'
+  resources :reports
 end
