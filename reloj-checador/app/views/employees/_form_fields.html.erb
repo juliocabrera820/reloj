@@ -1,37 +1,37 @@
-<div class="form-group mb-3">
-  <%= form.label :name %>
-  <%= form.text_field :name, class: "form-control #{validate_input(@employee, :name)}" %>
-  <span class="text-danger"><%= error_message(@employee, :name)%></span>
+<div class="form-group mb-4">
+  <%= form.label :name, class:"label-form" %>
+  <%= form.text_field :name, class: "in-form #{validate_input(@employee, :name)}" %>
+  <span class="text-danger"><%= error_message(@employee, :name) %></span>
 </div>
-<div class="form-group mb-3">
-  <%= form.label :email %>
-  <%= form.text_field :email, class: "form-control #{validate_input(@employee, :email)}" %>
-  <span class="text-danger"><%= error_message(@employee, :email)%></span>
+<div class="form-group mb-4">
+  <%= form.label :email, class:"label-form" %>
+  <%= form.text_field :email, class: "in-form #{validate_input(@employee, :email)}" %>
+  <span class="text-danger"><%= error_message(@employee, :email) %></span>
 </div>
-<div class="form-group mb-3">
-  <%= form.label :position %>
-  <%= form.text_field :position, class: "form-control #{validate_input(@employee, :position)}" %>
-  <span class="text-danger"><%= error_message(@employee, :position)%></span>
+<div class="form-group mb-4">
+  <%= form.label :position, class:"label-form" %>
+  <%= form.text_field :position, class: "in-form #{validate_input(@employee, :position)}" %>
+  <span class="text-danger"><%= error_message(@employee, :position) %></span>
 </div>
-<div class="form-group mb-3">
-  <%= form.label :employee_number %>
-  <%= form.text_field :employee_number, class: "form-control #{validate_input(@employee, :employee_number)}" %>
-  <span class="text-danger"><%= error_message(@employee, :employee_number)%></span>
+<div class="form-group mb-4">
+  <%= form.label :employee_number, class:"label-form" %>
+  <%= form.text_field :employee_number, class: "in-form #{validate_input(@employee, :employee_number)}" %>
+  <span class="text-danger"><%= error_message(@employee, :employee_number) %></span>
 </div>
-<div class="form-group mb-3">
-  <%= form.label :private_number %>
-  <%= form.text_field :private_number, class: "form-control #{validate_input(@employee, :private_number)}" %>
-  <span class="text-danger"><%= error_message(@employee, :private_number)%></span>
+<div class="form-group mb-4">
+  <%= form.label :private_number, class:"label-form" %>
+  <%= form.text_field :private_number, class: "in-form #{validate_input(@employee, :private_number)}" %>
+  <span class="text-danger"><%= error_message(@employee, :private_number) %></span>
 </div>
 <div class="form-group">
-  <%= form.label :company %>
+  <%= form.label :company, class:"label-form" %>
   <%= form.select :company_id, convert_to_option(@companies), {}, { class: 'form-select'} %>
 </div>
 <div class="mt-4">
   <div class="d-grid">
-    <%= link_to 'Back', employees_path, class: 'btn btn-warning'%>
+    <%= link_to 'Back', employees_path, class: 'btn btn-danger' %>
   </div>
   <div class="d-grid mt-2">
-    <%= form.submit "#{button_title}", :class => 'btn btn-success' %>
+    <%= form.submit "#{button_title}", :class => 'btn form-btn' %>
   </div>
 </div>
