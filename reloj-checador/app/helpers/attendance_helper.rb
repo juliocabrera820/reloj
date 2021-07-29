@@ -10,4 +10,17 @@ module AttendanceHelper
   rescue ZeroDivisionError
     'there was an error'
   end
+
+  def validate_check_in_time
+    @time = Time.now
+    @hour = @time.hour
+    @minutes = @time.min
+    check_in_hour = 9
+    check_in_minute = 15
+    if @hour > check_in_hour
+      false
+    else
+      !(@minutes > check_in_minute)
+    end
+  end
 end
