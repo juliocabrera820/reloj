@@ -20,9 +20,9 @@
               <% end %>
             </li>
             <li class="list-group-item p-0 m-0 li_menu">
-              <a href="#" class="text-decoration-none d-block px-3 py-2" >
+              <%= link_to reports_path, class: "text-decoration-none d-block px-3 py-2 #{current_path? reports_path}" do %>
                 <i class="fas fa-clipboard fa-fw"></i>Reports
-              </a>
+              <% end %>
             </li>
             <!-- Log out-->
             <li class="list-group-item p-0 m-0 li_menu">
@@ -65,10 +65,9 @@
                     <% end %>
                   </li>
                   <li class="list-group-item p-0 m-0 li_menu">
-                    <a href="#" class="text-decoration-none d-block px-3 py-2" >
-                      <i class="far fa-clipboard fa-fw"></i>
-                      Reports
-                    </a>
+                    <%= link_to reports_path, class: "text-decoration-none d-block px-3 py-2 #{current_path? reports_path}" do %>
+                      <i class="fas fa-clipboard fa-fw"></i>Reports
+                    <% end %>
                   </li>
                   <!-- Log out-->
                   <li class="list-group-item p-0 m-0 li_menu">
