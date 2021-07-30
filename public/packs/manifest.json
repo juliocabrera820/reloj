@@ -1,5 +1,5 @@
 {
-  "application.css": "/packs/css/application-865ac222.css",
+  "application.css": "/packs/css/application-680ed38c.css",
   "application.js": "/packs/js/application-83224856b6e42fb12956.js",
   "application.js.map": "/packs/js/application-83224856b6e42fb12956.js.map",
   "check.js": "/packs/js/check-6a420b88a30eafa85641.js",
@@ -9,7 +9,7 @@
   "entrypoints": {
     "application": {
       "css": [
-        "/packs/css/application-865ac222.css"
+        "/packs/css/application-680ed38c.css"
       ],
       "js": [
         "/packs/js/application-83224856b6e42fb12956.js"
