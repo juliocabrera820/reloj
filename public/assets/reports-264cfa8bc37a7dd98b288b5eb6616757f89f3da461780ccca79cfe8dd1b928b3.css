@@ -1,0 +1,21 @@
+/* line 1, app/assets/stylesheets/reports.scss */
+.title-report {
+  color: #FF8474;
+  font-weight: bolder;
+}
+
+/* line 6, app/assets/stylesheets/reports.scss */
+.title-month {
+  color: #9F5F80;
+}
+
+/* line 10, app/assets/stylesheets/reports.scss */
+thead {
+  background-color: #9F5F80;
+  color: white;
+}
+
+/* line 15, app/assets/stylesheets/reports.scss */
+td {
+  color: #583D72;
+}
