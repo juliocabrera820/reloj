@@ -1,3 +1,30 @@
-// Place all the styles related to the companies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.in-company {
+  -webkit-transition: box-shadow 0.3s;
+  border: 0;
+  box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+  height:17px;
+  margin-right: 5px;
+  transition: box-shadow 0.3s;
+  width: 430px;
+}
+
+.in-company:focus {
+  box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
+  outline: none;
+}
+
+@media screen and (max-width: 700px) {
+  .in-company {
+    -webkit-transition: box-shadow 0.3s;
+    border: 0;
+    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+    height:17px;
+    transition: box-shadow 0.3s;
+    width: 280px;
+  }
+
+  .in-company:focus {
+    box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
+    outline: none;
+  }
+}
