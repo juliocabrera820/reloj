@@ -1,24 +1,27 @@
-	.li_menu a {
-		color: black;
-	}
-	.li_menu a.active {
-		background-color: #583D72;
-		color: white;
-	}
-	.li_menu a:hover {
-		color: white;
-		background-color: #583D72;
-	}
-	.menu_buton {
+.li_menu a {
+	color: black;
+}
+
+.li_menu a.active {
+	background-color: #583D72;
+	color: white;
+}
+
+.li_menu a:hover {
+  background-color: #583D72;
+	color: white;
+}
+
+.menu_buton {
+	display: none;
+}
+
+@media only screen and (max-width: 768px) {
+	.side_menu {
 		display: none;
 	}
-	/*screen for md*/
-	@media only screen and (max-width: 768px) {
-	  .side_menu {
-			display: none;
-		}
-		.menu_buton{
-			display: block;
-		}
+	.menu_buton{
+		display: block;
 	}
+}
 

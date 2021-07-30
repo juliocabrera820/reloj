@@ -1,207 +1,209 @@
-  .split {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
+.split {
+  height: 100%;
+  overflow-x: hidden;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  width: 50%;
+  z-index: 1;
+}
 
-  .split h2{
-    margin-top: 10%;
-    text-align: center;
-  }
+.split h2{
+  margin-top: 10%;
+  text-align: center;
+}
 
-  .left {
-    left: 0;
-    background-color: rgb(255, 255, 255);
-  }
+.left {
+  background-color: rgb(255, 255, 255);
+  left: 0;
+}
 
-  .right {
-    right: 0;
-    background-color: #FF8474;
-  }
+.right {
+  background-color: #FF8474;
+  right: 0;
+}
 
-  .buttom-log{
-    background-color: #583D72;
-  }
+.buttom-log{
+  background-color: #583D72;
+}
 
-  .split {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
+.split {
+  height: 100%;
+  overflow-x: hidden;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  width: 50%;
+  z-index: 1;
+}
 
-  .split h2{
-    margin-top: 10%;
-    text-align: center;
-    color:#9F5F80;
-    font-weight: bold;
-  }
+.split h2{
+  color:#9F5F80;
+  font-weight: bold;
+  margin-top: 10%;
+  text-align: center;
+}
 
-  .left {
-    left: 0;
-    background-color: rgb(255, 255, 255);
-  }
+.left {
+  background-color: rgb(255, 255, 255);
+  left: 0;
+}
 
-  .right {
-    right: 0;
-    background-color: #FF8474;
-  }
+.right {
+  background-color: #FF8474;
+  right: 0;
+}
 
-  .centered-image{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+.centered-image{
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .centered-image img {
-    width: 350px;
-  }
+.centered-image img {
+  width: 350px;
+}
 
-  .centered-form{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+.centered-form{
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
 
-  .button-log{
-    background-color: #583D72;
-    border: none;
-    color: white;
-    padding: 15px 230px;
-    border-radius: 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
+.button-log{
+  background-color: #583D72;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  padding: 15px 230px;
+  text-align: center;
+  text-decoration: none;
+}
 
-  .in-email {
-    height:17px;
-    border: 0;
-    width: 500px;
-    margin-left: 10px;
-    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
-    -webkit-transition: box-shadow 0.3s;
-    transition: box-shadow 0.3s;
-  }
+.in-email {
+  -webkit-transition: box-shadow 0.3s;
+  border: 0;
+  box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+  height:17px;
+  margin-left: 10px;
+  transition: box-shadow 0.3s;
+  width: 500px;
+}
 
-  .in-email:focus {
-    outline: none;
-    box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
-  }
+.in-email:focus {
+  box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
+  outline: none;
+}
 
-  .in-password {
-    height:17px;
-    border: 0;
-    width: 500px;
-    margin-left: 10px;
-    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
-    -webkit-transition: box-shadow 0.3s;
-    transition: box-shadow 0.3s;
-  }
+.in-password {
+  -webkit-transition: box-shadow 0.3s;
+  border: 0;
+  box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+  height:17px;
+  margin-left: 10px;
+  transition: box-shadow 0.3s;
+  width: 500px;
+}
 
-  .in-password:focus {
-    outline: none;
-    box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
-  }
+.in-password:focus {
+  box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
+  outline: none;
+}
 
 @media screen and (max-width: 700px){
   .split {
     height: 50%;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
     overflow-x: hidden;
     padding-top: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
   }
 
-  .split h2{
+  .split h2 {
     margin-top: 10%;
-    text-align: center;
     padding: 0px 10px;
+    text-align: center;
   }
 
   .left {
-    left: 0;
     background-color: rgb(255, 255, 255);
+    left: 0;
   }
 
   .right {
-    top: 50%;
     background-color: #FF8474;
+    top: 50%;
   }
 
   .centered-image {
-    position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute;
     text-align: center;  
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .centered-image img {
     width: 230px;
   }
 
-  .centered-form{
-    position: absolute;
-    margin-top: 50px;
-    top: 50%;
+  .centered-form {
     left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 50px;
+    position: absolute;
     text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  .button-log{
+  .button-log {
     background-color: #583D72;
+    border-radius: 50px;
     border: none;
     color: white;
-    padding: 2px 60px;
-    border-radius: 50px;
-    text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    padding: 2px 60px;
+    text-align: center;
+    text-decoration: none;
   }
 
   .in-email {
-    height:17px;
-    border: 0;
-    width: 280px;
-    margin-left: 10px;
-    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
     -webkit-transition: box-shadow 0.3s;
+    border: 0;
+    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+    height:17px;
+    margin-left: 10px;
     transition: box-shadow 0.3s;
+    width: 280px;
   }
+
   .in-email.in-email[type=text]:focus {
-    outline: none;
     box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
+    outline: none;
   }
 
   .in-password {
-    height:17px;
-    border: 0;
-    width: 280px;
-    margin-left: 10px;
-    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
     -webkit-transition: box-shadow 0.3s;
+    border: 0;
+    box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+    height:17px;
+    margin-left: 10px;
     transition: box-shadow 0.3s;
+    width: 280px;
   }
+
   .in-password:focus {
-    outline: none;
     box-shadow: -8px 10px 0px -7px #583D72, 8px 10px 0px -7px #583D72;
+    outline: none;
   }
 }

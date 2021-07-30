@@ -1,5 +1,8 @@
-<nav class="nav_log fw-bold"><a> Login &nbsp; <i class="fas fa-user"></i></a></nav>
-<div class="d-flex vw-100 vh-100 justify-content-center  align-items-center flex-column">
+<%= link_to new_user_session_path, class: 'nav_log fw-bold' do %>
+  <i class="fas fa-user"></i>Sign in
+<% end %>
+
+<div class="d-flex vw-100 vh-100 justify-content-center align-items-center flex-column">
   <h1 class="fw-bold fst-italic">Check Clock</h1>
   <div class="mb-5 text-center caja_int">
     <%= form_with model: @attendance, url: employee_check_path do |form| %>
